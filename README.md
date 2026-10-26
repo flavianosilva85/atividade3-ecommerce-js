@@ -79,4 +79,4 @@ Atividade3_Ecommerce/
 ---
 
 ## 🎥 Vídeo de Apresentação
-* **Link no YouTube (Não Listado):** [Assista à apresentação do projeto no YouTube](https://youtu.be/YHwoyaUEMmU)
+* **Link no YouTube (Não Listado):** [Assista à apresentação do projeto no YouTube](https://youtu.be/80YeSykfDYE)
