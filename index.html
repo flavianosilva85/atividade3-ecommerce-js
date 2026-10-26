@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+
+    <header>
+        <h1>TechStore</h1>
+        
+        <!-- F: Campo de Pesquisa -->
+        <div class="busca-container">
+            <div class="campo-busca-wrapper">
+                <input type="text" id="campo-busca" placeholder="Buscar produtos...">
+                <button type="button" id="btn-limpar-busca" aria-label="Limpar pesquisa" title="Limpar pesquisa">✕</button>
+            </div>
+            <button id="btn-busca" aria-label="Buscar" title="Buscar">🔍</button>
+        </div>
+
+        <nav aria-label="Menu de navegação principal">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <!-- E: Mostrar contagem na tela -->
+                <li><a href="#carrinho" id="menu-carrinho">🛒 Carrinho (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+        
+        <!-- C: Botão de Tema -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">🌙 Modo Escuro</button>
+    </header>
+
+    <main id="inicio">
+        <section id="produtos" class="produtos-section">
+            <h2>Nossos Produtos</h2>
+            
+            <div class="grade-produtos">
+                
+                <!-- Produto 1 -->
+                <article class="produto" data-id="1" data-preco="750.00">
+                    <img src="monitor.jpg" alt="Monitor Portátil Arzopa 15.6 polegadas">
+                    <h3>Monitor Portátil Arzopa 15.6"</h3>
+                    <p>Tela portátil Full HD ideal para expandir seu setup de desenvolvimento.</p>
+                    
+                    <!-- D: Mostrar/esconder detalhes -->
+                    <button class="btn-detalhes">Ver Detalhes</button>
+                    <ul class="caracteristicas">
+                        <li>Resolução Full HD (1920x1080)</li>
+                        <li>Painel IPS de alta qualidade</li>
+                        <li>Conexão direta via USB-C e Mini HDMI</li>
+                    </ul>
+                    
+                    <span class="preco">R$ 750,00</span>
+                    <button aria-label="Comprar Monitor Portátil Arzopa" class="btn-comprar">Comprar</button>
+                </article>
+
+                <!-- Produto 2 -->
+                <article class="produto" data-id="2" data-preco="299.90">
+                    <img src="teclado.jpg" alt="Teclado mecânico com iluminação">
+                    <h3>Teclado Mecânico RGB</h3>
+                    <p>Teclado mecânico com switches azuis, ideal para digitação rápida e programação.</p>
+                    
+                    <!-- D: Mostrar/esconder detalhes -->
+                    <button class="btn-detalhes">Ver Detalhes</button>
+                    <ul class="caracteristicas">
+                        <li>Switches táteis para precisão</li>
+                        <li>Iluminação RGB customizável</li>
+                        <li>Sistema Anti-ghosting integrado</li>
+                    </ul>
+                    
+                    <span class="preco">R$ 299,90</span>
+                    <button aria-label="Comprar Teclado Mecânico RGB" class="btn-comprar">Comprar</button>
+                </article>
+
+                <!-- Produto 3 -->
+                <article class="produto" data-id="3" data-preco="150.00">
+                    <img src="mouse.jpg" alt="Mouse ergonômico">
+                    <h3>Mouse Ergonômico</h3>
+                    <p>Mouse sem fio com design vertical para evitar dores durante longas jornadas de trabalho.</p>
+                    
+                    <!-- D: Mostrar/esconder detalhes -->
+                    <button class="btn-detalhes">Ver Detalhes</button>
+                    <ul class="caracteristicas">
+                        <li>Design vertical para alívio articular</li>
+                        <li>Conexão sem fio 2.4GHz</li>
+                        <li>DPI ajustável de alta precisão</li>
+                    </ul>
+                    
+                    <span class="preco">R$ 150,00</span>
+                    <button aria-label="Comprar Mouse Ergonômico" class="btn-comprar">Comprar</button>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato">
+        <p>&copy; 2026 Flaviano Marcos da Silva. Atividade de Análise e Desenvolvimento de Sistemas - Unyleya.</p>
+        <p>Todos os direitos reservados.</p>
+        <!-- B: Mostrar data e hora no rodapé -->
+        <p id="data-hora"></p>
+    </footer>
+
+    <!-- Modal do Carrinho de Compras -->
+    <div id="modal-carrinho" class="modal-carrinho" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="titulo-carrinho">
+        <div class="modal-conteudo">
+            <div class="modal-header">
+                <h2 id="titulo-carrinho">🛒 Carrinho de Compras</h2>
+                <button type="button" id="btn-fechar-carrinho" class="btn-fechar" aria-label="Fechar carrinho">&times;</button>
+            </div>
+            
+            <div id="lista-carrinho" class="lista-carrinho">
+                <!-- Itens inseridos dinamicamente via JS -->
+            </div>
+            
+            <div class="modal-footer">
+                <div class="carrinho-total">
+                    <span>Total da Compra:</span>
+                    <strong id="valor-total-carrinho">R$ 0,00</strong>
+                </div>
+                <div class="botoes-carrinho">
+                    <button type="button" id="btn-limpar-carrinho" class="btn-acao-carrinho btn-limpar">🗑️ Limpar Carrinho</button>
+                    <button type="button" id="btn-finalizar-compra" class="btn-acao-carrinho btn-finalizar">✅ Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Integração do arquivo JS (Requisito Obrigatório 1) -->
+    <script src="script.js"></script>
+</body>
+</html>
